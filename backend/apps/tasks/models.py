@@ -10,3 +10,10 @@ class Task(models.Model):
     description = models.TextField(blank=True)
     posted_by = models.ForeignKey(
         get_user_model(), null=True, on_delete=models.CASCADE)
+
+
+class Like(models.Model):
+    user = models.ForeignKey(
+        get_user_model(), null=True, on_delete=models.CASCADE)
+    task = models.ForeignKey(
+        'tasks.Task', related_name='likes', on_delete=models.CASCADE)
