@@ -14,6 +14,7 @@ import { Link } from 'react-router-dom'
 import LikeTask from './LikeTask'
 import DeleteTask from './DeleteTask'
 import UpdateTask from './UpdateTask'
+import CommentTask from "./CommentTask";
 
 const TaskList = ({ classes, tasks }) => (
   <List>
@@ -48,6 +49,9 @@ const TaskList = ({ classes, tasks }) => (
           <UpdateTask task={task} />
           <DeleteTask task={task} />
         </ExpansionPanelActions>
+        <ExpansionPanelDetails>
+            <CommentTask taskComments={task.comments}/>
+        </ExpansionPanelDetails>
       </ExpansionPanel>
     ))}
   </List>

@@ -35,6 +35,17 @@ export const GET_TASKS_QUERY = gql`
       id
       title
       description
+      comments{
+        id
+        description
+        createdDate
+        parent {
+          id
+        }
+        commentBy {
+          username
+        }
+      }
       likes {
         id
       }
