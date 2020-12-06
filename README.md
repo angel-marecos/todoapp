@@ -6,13 +6,13 @@ You must have docker and docker-compose installed once the project is cloned. Yo
 ## Execution
 Create the images with docker-compose
 > $ cd todoapp
-$ docker-compose up -d
+> $ docker-compose up -d
 
 We enter the backend image
 
 > $ docker exec -it backend bash
-$ python manage.py makemigrations
-$ python manage.py migrate
+> $ python manage.py makemigrations
+> $ python manage.py migrate
 
 Enter the browser and type
 > *localhost:3000*
