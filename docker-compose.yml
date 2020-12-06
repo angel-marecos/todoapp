@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     restart: always
-    container_name: 'postgres'
+    container_name: postgres
     image: "postgres:11.2"
     environment:
       - POSTGRES_DB=postgres
@@ -13,10 +13,11 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     
   web:
+    container_name: backend
     build:
       context: './backend'
       dockerfile: '../compose/local/django/Dockerfile'
-    image: 'todoapp'
+    image: 'todoapp_api'
     ports:
       - "8000:8000"
     command: python manage.py runserver 0.0.0.0:8000
@@ -25,6 +26,18 @@ services:
     
     depends_on:
       - db
+  
+  frontend:
+    container_name: frontend
+    build:
+      context: './frontend'
+      dockerfile: '../compose/local/react/Dockerfile'
+    image: 'todoapp_client'
+    ports:
+      - "3000:3000"
+    command: npm start
+    volumes:
+    - ./frontend:/app
 
 volumes:
   postgres_data:
