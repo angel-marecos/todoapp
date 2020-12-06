@@ -1,7 +1,7 @@
 # Todo list Project
 ## Introduction
 This is a project made with react, graphql, django with postgres
-## Instalación
+## Installation
 You must have docker and docker-compose installed once the project is cloned. You can install it from this page, click [Here](https://docs.docker.com/get-started/ "Here")
 ## Execution
 Create the images with docker-compose
