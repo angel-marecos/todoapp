@@ -5,11 +5,14 @@ This is a project made with react, graphql, django with postgres
 You must have docker and docker-compose installed once the project is cloned. You can install it from this page, click [Here](https://docs.docker.com/get-started/ "Here")
 ## Execution
 Create the images with docker-compose
-`$ cd todoapp`
-`$ docker-compose up -d`
+> $ cd todoapp
+$ docker-compose up -d
+
 We enter the backend image
-`$ docker exec -it backend bash`
-`$ python manage.py makemigrations`
-`$ python manage.py migrate`
+
+> $ docker exec -it backend bash
+$ python manage.py makemigrations
+$ python manage.py migrate
+
 Enter the browser and type
 > *localhost:3000*
