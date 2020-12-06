@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     
-  web:
+  api:
     container_name: backend
     build:
       context: './backend'
@@ -27,7 +27,7 @@ services:
     depends_on:
       - db
   
-  frontend:
+  web:
     container_name: frontend
     build:
       context: './frontend'
